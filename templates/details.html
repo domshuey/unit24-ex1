@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} ALL ABOUT {{pet.name}} {% endblock %}
+
+{% block content %}
+
+<div class="container justify-content-center text-center bg-warning mt-5">
+    <h1>Meet {{pet.name}}!</h1>
+    <img src="{{pet.photo_url}}" alt="Photo of {{pet.name}}">
+    <p class="fs-2 text-decoration-underline">The Stats:</p>
+    <section class="fs-3">
+        <p>
+            Species:
+            {{pet.species}}
+        </p>
+        <p>
+            Age:
+            {{pet.age}}
+        </p>
+        <p>
+            Notes:
+            {{pet.notes}}
+        </p>
+        <p>
+            
+        </p>
+    </section>
+    <p class="fs-3 text-primary"> {{pet.name }} IS {% if pet.available == False %} not {% endif %} AVAILABLE! </p>
+    
+    <a href="/pets/{{pet.id}}/edit" class="btn btn-light">Edit Info</a>
+    <a href="/" class="btn btn-light">Home</a>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

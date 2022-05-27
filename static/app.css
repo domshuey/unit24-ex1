@@ -1,0 +1,16 @@
+body {
+    background-image: url('https://img.pixers.pics/download(s3:700/FO/71/68/79/43/700_FO71687943_4c1bcc6f5bfd7e4c8baabd42ab6d5e75.jpg):pattern(0.2381w,0.2381h):resize(700,700):compose(download(cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png),over,480,650):format(jpg)/wallpapers-watercolor-illustration-with-animal-footprints.jpg.jpg');
+}
+
+img {
+    width: 300px;
+}
+
+div {
+    background-color: rbga(255,255,0,.1);
+}
+
+.pet-prof {
+    width: 300px;
+    display: inline-block;
+}

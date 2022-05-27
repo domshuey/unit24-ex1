@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Pet{% endblock %}
+
+{% block content %}
+
+<div class="container bg-primary pt-4 pb-5 justify-content-center">
+    <h1 class="display-2 text-center text-white">Edit Pet Info Here</h1>
+    <form method="post" class="form-group text-center">
+        {{ form.hidden_tag() }}
+        
+        <p>{{form.name.label(class='text-info text-white')}}</p>
+        <p>{{form.name(class='form-control mb-2')}}</p>
+        
+        <p>{{form.species.label(class='text-info text-white')}}</p>
+        <p>{{form.species(class='form-control mb-2')}}</p>
+        
+        <p>{{form.age.label(class='text-info text-white')}}</p>
+        <p>{{form.age(class='form-control mb-2')}}</p>
+        
+        <p>{{form.notes.label(class='text-info text-white')}}</p>
+        <p>{{form.notes(class='form-control mb-2')}}</p>
+        
+        <p>{{form.photo_url.label(class='text-info text-white')}}</p>
+        <p>{{form.photo_url(class='form-control mb-2')}}</p>
+
+        <p>{{form.available.label(class='text-info text-white')}}</p>
+        <p>{{form.available(class='form-control mb-2 col-1')}}</p>
+        
+        <button class="mt-4 btn btn-success col-4">Save Changes</button>          
+    </form>
+
+        <a href="/pets/{{pet.id}}" class="btn btn-dark">Cancel</a>
+    
+    <!-- <form method="post" class="form-group">
+        {{form.hidden_tag()}}
+        {% for field in form 
+            if field.widget.input_type != 'hidden' %}
+
+            <p class="g-col-4">{{field.label}}</p>
+            <p class="g-col-4">{{field(class='form-control')}}</p>
+
+        {% endfor %}
+        <button class=" mt-4 btn btn-danger">Give your pet away!</button>
+    </form> -->
+</div>
+
+{% endblock %}

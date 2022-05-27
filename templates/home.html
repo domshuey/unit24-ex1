@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Homepage {% endblock %}
+
+{% block content %}
+<div class="container bg-warning">
+<h1 class="display-1 text-center">Welcome to Happy Homes Adoption Center! </h1>
+<p class="text-center pt-2 fs-3">We're so happy you're here, and we hope we can help you rehome our furry friends!</p>
+<h3 class="text-center pt-5 text-primary ">Available To Take Home With You Today!</h3>
+
+<div class="container">
+{% for pet in pets %}
+            <div class="col pet-prof">
+                <img class="img-thumbnail" src="{{pet.photo_url}}" alt="Photo of {{pet.name}}">
+                <br>
+                <a href="/pets/{{pet.id}}" class="fw-semibold fs-5 ">{{pet.name}}</a>
+                {% if pet.available == True %}
+                    <span class="fw-semibold fs-5 text-uppercase">is available!</span>
+                {% else %}
+                <span>is not currently available.</span>
+                {% endif %}
+            </div>
+        
+            {% endfor %}
+        </div>
+
+<p class="text-center fs-4 fw-bold">Need to abandon your family's loyal furry friend...? Click <a href="/add">Here</a></p>
+
+</div>
+{% endblock %}
